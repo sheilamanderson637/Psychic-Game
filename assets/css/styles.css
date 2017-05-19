@@ -1,0 +1,31 @@
+body {
+	background-color: black;
+	font-family: fantasy;
+	color: white;
+}
+
+img {
+	width: 100%;
+	height: 600px;
+	position: fixed;
+	margin-top: none;
+}
+
+h1,
+h2 {
+	padding-top: 40px;
+	position: relative;
+	text-align: center;
+
+}
+
+h1 {
+	font-size: 72px;
+	padding-bottom: 140px;
+}
+
+h2 {
+	font-size: 36px;	
+}
+
+
