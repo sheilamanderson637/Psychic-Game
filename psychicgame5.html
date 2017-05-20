@@ -16,7 +16,7 @@
 
   	<h1>Psychic Game</h1>
 
-  	<h2>Enter a number from 1 to 9...</h2>
+  	<h2>Guess what letter I am thinking...</h2>
 
     <div id="game">
 
@@ -30,17 +30,17 @@
     var losses = 0;
     var guessesLeft = 9;
     var displayGuesses = [];
-    // var numberArray = ("1", "2", "3", "4", "5", "6", "7", "8", "9");
+    var letterArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
       document.onkeyup = function(event) {
 
         var userGuess = event.key;
-        var computerGuess = Math.floor(Math.random() * 9) + 1;
+        var computerGuess = letterArray[Math.floor(Math.random() *letterArray.length)];
 
         alert("user guess: " + userGuess);
         alert("computer guess: " + computerGuess);
 
-        if (parseInt(userGuess) === computerGuess) {
+        if (userGuess === computerGuess) {
         	wins++;
         }
 
@@ -65,7 +65,7 @@
           document.querySelector("#game").innerHTML = html;
       };
 
-      /* Would like to have a way to end the game and prevent additional guesses. Would like to make sure the current characters are entered (1-9). Need to clean up comments and indents for all sections*/
+      /* Would like to have a way to end the game and prevent additional guesses.  Need to make sure letters guessed are lower case. Need to make sure only letters are entered. Need to clean up comments and indents for all sections*/
 
     </script>
   </body>
