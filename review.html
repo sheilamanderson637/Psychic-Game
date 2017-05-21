@@ -32,37 +32,34 @@
     var displayGuesses = [];
     var letterArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
-
-
       document.onkeyup = function(event) {
 
         var userGuess = event.key;
-        var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+        // var userGuess = string.toLocaleLowerCase()
         var computerGuess = letterArray[Math.floor(Math.random() * letterArray.length)];
 
         alert("user guess: " + userGuess);
         alert("computer guess: " + computerGuess);
 
+        for (var i = Things.length - 1; i >= 0; i--) {
+          Things[i]
+        }
+
+        }
         if (userGuess === computerGuess) {
         	wins++;
-          alert("You have rare psychic abilities and should play the lottery today!")
-          
         }
 
         else {
         	losses++;
-        	guessesLeft--;
-          alert("Good try you have " + guessesLeft + " lives left. Find your inner psyhic skills and guess wisely!") 
+        	guessesLeft--; 
         }
 
         if (guessesLeft <= 0) {
-          alert("Your guesses are over and you lose. Work harder to develop your psychic skills!")
-  
+          document.write("GAME OVER");
         }
 
-        displayGuesses.push(userGuess); 
-
-        if (this.guessesLeft === 0 )    
+        displayGuesses.push(userGuess);     
 
            //Select the div with the id "game", and insert the following HTML into it.
            var html = 
@@ -74,7 +71,7 @@
           document.querySelector("#game").innerHTML = html;
       };
 
-      /* Would like to have a way to end the game and prevent additional guesses.   Need to make sure only letters are entered. Need to clean up comments and indents for all sections*/
+      /* Would like to have a way to end the game and prevent additional guesses.  Need to make sure letters guessed are lower case. Need to make sure only letters are entered. Need to clean up comments and indents for all sections*/
 
     </script>
   </body>
