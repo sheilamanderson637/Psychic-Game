@@ -33,15 +33,28 @@
     var letterArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
 
+      // Enable recording user letter entry by capturing key strokes.
 
       document.onkeyup = function(event) {
 
         var userGuess = event.key;
+
+      // Convert upper case letters entered to lower case.
+
         var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+
+      // Select a random letter from the letter array.
+
         var computerGuess = letterArray[Math.floor(Math.random() * letterArray.length)];
+
+
+        // Show user and computer guesses in alerts on the screen. 
 
         alert("user guess: " + userGuess);
         alert("computer guess: " + computerGuess);
+
+
+        // Check to see if user guess matches the computer guess. Increment "wins" if a match, decrement "lives" and increment losses if not a match. Alert messages for both conditions. 
 
         if (userGuess === computerGuess) {
         	wins++;
@@ -55,16 +68,18 @@
           alert("Good try you have " + guessesLeft + " lives left. Find your inner psyhic skills and guess wisely!") 
         }
 
+        // End game with a message when there are no more guesses.
+
         if (guessesLeft <= 0) {
           alert("Your guesses are over and you lose. Work harder to develop your psychic skills!")
   
         }
+        // Insert guesses into the guesses array.
 
-        displayGuesses.push(userGuess); 
+        displayGuesses.push(userGuess);    
 
-        if (this.guessesLeft === 0 )    
+        // Select the div with the id "game", and insert the following HTML into it.
 
-           //Select the div with the id "game", and insert the following HTML into it.
            var html = 
            "<h2>Wins: " + wins + "</h2>" +
            "<h2>Losses: " + losses + "</h2>" +
@@ -73,8 +88,6 @@
 
           document.querySelector("#game").innerHTML = html;
       };
-
-      /* Would like to have a way to end the game and prevent additional guesses.   Need to make sure only letters are entered. Need to clean up comments and indents for all sections*/
 
     </script>
   </body>
